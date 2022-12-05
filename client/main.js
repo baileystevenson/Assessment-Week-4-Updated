@@ -66,32 +66,26 @@ function submitHandler(e) {
 let goal = document.querySelector('#goal')
 
 let bodyObj = {
-    goal: accomplish.value,
+    goal: goal.value,
 }  
-
 createAccomplish(bodyObj)
-
 goal.value= ""
-
 }
-
 function createAccomplishCard(goal) {
     const goalCard = document.createElement('div')
     goalCard.classList.add('goal-card')
 
     goalCard.innerHTML = 
-    `<p class=“goal”> ${ goal[i]} </p>`
+    `<p class=“goal”> ${goal.goal} </p>`
 
     accomplishContainer.appendChild(goalCard)
 }
-
 function displayAccomplish(arr) {
     accomplishContainer.innerHTML = ``
     for (let i = 0; i < arr.length; i++) {
         createAccomplishCard(arr[i])
     }
 }   
-
 form.addEventListener('submit', submitHandler)
 
 
